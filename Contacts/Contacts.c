@@ -2,7 +2,7 @@
 // 기본 입출력 헤더 파일
 #include <stdio.h>
 
-#include <insert.h>
+//#include <insert.h>
 
 // 메모리 기본 함수 헤더 파일
 #include <string.h>
