@@ -1,16 +1,16 @@
 
-// ê¸°ë³¸ ì…ì¶œë ¥ í—¤ë” íŒŒì¼
+// ±âº» ÀÔÃâ·Â Çì´õ ÆÄÀÏ
 #include <stdio.h>
 
 #include <insert.h>
 
-// ë©”ëª¨ë¦¬ ê¸°ë³¸ í•¨ìˆ˜ í—¤ë” íŒŒì¼
+// ¸Ş¸ğ¸® ±âº» ÇÔ¼ö Çì´õ ÆÄÀÏ
 #include <string.h>
 
 
 #define MAX 250
 
-// ì—°ë½ì²˜ ê°œì¸ êµ¬ì¡°ì²´
+// ¿¬¶ôÃ³ °³ÀÎ ±¸Á¶Ã¼
 typedef struct {
 	char name[30];
 	char number[30];
@@ -18,13 +18,13 @@ typedef struct {
 	char bir[30];
 }User;
 
-// í•¨ìˆ˜ ì„ ì–¸ë¶€
+// ÇÔ¼ö ¼±¾ğºÎ
 void insert(User* ptr, int* num);
 int deleted(User* ptr, int* num);
 int search(User* ptr, int* num);
 void printAll(User* ptr, int* num);
 
-// main í•¨ìˆ˜
+// main ÇÔ¼ö
 int main(void)
 {
 	int input;
@@ -34,7 +34,7 @@ int main(void)
 	while (1)
 	{
 		printf("***** Menu ***** \n");
-		printf("1.ëª©ë¡ë³´ê¸°   2.ì¶”ê°€   3.ê²€ìƒ‰   4.ì‚­ì œ   5.ì¢…ë£Œ\n");
+		printf("1.¸ñ·Ïº¸±â   2.Ãß°¡   3.°Ë»ö   4.»èÁ¦   5.Á¾·á\n");
 		scanf_s("%d", &input);
 
 		if (input == 1)
@@ -66,49 +66,50 @@ int main(void)
 	return 0;
 }
 
-// ì‚­ì œ
+
+// »èÁ¦
 int deleted(User* ptr, int* num)
 {
 	char name[30];
 	int i, j;
 
-	// 1ê°œ ì´ìƒ
+	// 1°³ ÀÌ»ó
 	if (*num > 0)
 	{
-		printf("ì‚­ì œí•  ì´ë¦„: ");
+		printf("»èÁ¦ÇÒ ÀÌ¸§: ");
 		scanf("%s", name);
 
 		for (i = 0; i < MAX; i++)
 		{
-			// ë¬¸ìì—´ ë¹„êµ í•¨ìˆ˜ - strcmp
+			// ¹®ÀÚ¿­ ºñ±³ ÇÔ¼ö - strcmp
 			if (strcmp(name, ptr[i].name) == 0)
 			{
 				(*num)--;
-				printf("ì‚­ì œ ì™„ë£Œ \n");
+				printf("»èÁ¦ ¿Ï·á \n");
 
-				// ì—†ì„ ê²½ìš°
+				// ¾øÀ» °æ¿ì
 				if (i != MAX - 1)
 				{
 					for (j = i; j < MAX; j++)
 					{
-						// ë¬¸ìì—´ ë³µì‚¬ í•¨ìˆ˜ - strcpy
+						// ¹®ÀÚ¿­ º¹»ç ÇÔ¼ö - strcpy
 						strcpy(ptr[j].name, ptr[j + 1].name);
 						strcpy(ptr[j].number, ptr[j + 1].number);
 						strcpy(ptr[j].add, ptr[j + 1].add);
 						strcpy(ptr[j].bir, ptr[j + 1].bir);
 					}
 
-					// ë§ˆì§€ë§‰ NULL
+					// ¸¶Áö¸· NULL
 					*ptr[MAX - 1].name = NULL;
 					*ptr[MAX - 1].number = NULL;
 					*ptr[MAX - 1].add = NULL;
 					*ptr[MAX - 1].bir = NULL;
 				}
 
-				// ìˆì„ ê²½ìš°
+				// ÀÖÀ» °æ¿ì
 				else
 				{
-					// ë§ˆì§€ë§‰ NULL
+					// ¸¶Áö¸· NULL
 					*ptr[MAX - 1].name = NULL;
 					*ptr[MAX - 1].number = NULL;
 					*ptr[MAX - 1].add = NULL;
@@ -117,53 +118,53 @@ int deleted(User* ptr, int* num)
 				return 0;
 			}
 		}
-		printf("ì—†ìŠµë‹ˆë‹¤. \n");
+		printf("¾ø½À´Ï´Ù. \n");
 		return 0;
 	}
-	// ìœ ì € ì •ë³´X
+	// À¯Àú Á¤º¸X
 	else
 	{
-		printf("ë°ì´í„° ì—†ìŠµë‹ˆë‹¤.\n");
+		printf("µ¥ÀÌÅÍ ¾ø½À´Ï´Ù.\n");
 		return 0;
 	}
 }
 
-// ê²€ìƒ‰ í•¨ìˆ˜
+// °Ë»ö ÇÔ¼ö
 int search(User* ptr, int* num)
 {
 	char name[30];
 	int i;
 
-	// 1ê°œ ì´ìƒ
+	// 1°³ ÀÌ»ó
 	if (*num > 0)
 	{
-		printf("ê²€ìƒ‰í•  ì´ë¦„: ");
+		printf("°Ë»öÇÒ ÀÌ¸§: ");
 		scanf("%s", name);
 
 		for (i = 0; i < MAX; i++)
 		{
-			// ë°˜í™˜ ê°’ì´ 0 -> !=
+			// ¹İÈ¯ °ªÀÌ 0 -> !=
 			if (!strcmp(name, ptr[i].name))
 			{
-				printf("ì´ë¦„: %s \n", ptr[i].name);
-				printf("ì „í™”ë²ˆí˜¸: %s \n", ptr[i].number);
-				printf("ì£¼ì†Œ: %s \n", ptr[i].add);
-				printf("ìƒì¼: %s \n", ptr[i].bir);
-				printf("ì°¾ì•˜ìŠµë‹ˆë‹¤.. \n");
+				printf("ÀÌ¸§: %s \n", ptr[i].name);
+				printf("ÀüÈ­¹øÈ£: %s \n", ptr[i].number);
+				printf("ÁÖ¼Ò: %s \n", ptr[i].add);
+				printf("»ıÀÏ: %s \n", ptr[i].bir);
+				printf("Ã£¾Ò½À´Ï´Ù.. \n");
 				return 0;
 			}
 		}
-		printf("ì¶œë ¥ ì™„ë£Œ \n");
+		printf("Ãâ·Â ¿Ï·á \n");
 		return 0;
 	}
 	else
 	{
-		printf("í•´ë‹¹ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤. \n");
+		printf("ÇØ´ç µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù. \n");
 		return 0;
 	}
 }
 
-// ëª¨ë‘ ì¶œë ¥
+// ¸ğµÎ Ãâ·Â
 void printAll(User* ptr, int* num)
 {
 	int i = 0;
@@ -172,15 +173,15 @@ void printAll(User* ptr, int* num)
 	{
 		for (i = 0; i < *num; i++)
 		{
-			printf("ì´ë¦„: %s \n", ptr[i].name);
-			printf("ì „í™”ë²ˆí˜¸: %s \n", ptr[i].number);
-			printf("ì£¼ì†Œ: %s \n", ptr[i].add);
-			printf("ìƒì¼: %s \n", ptr[i].bir);
+			printf("ÀÌ¸§: %s \n", ptr[i].name);
+			printf("ÀüÈ­¹øÈ£: %s \n", ptr[i].number);
+			printf("ÁÖ¼Ò: %s \n", ptr[i].add);
+			printf("»ıÀÏ: %s \n", ptr[i].bir);
 			puts("");
 		}
-		printf("ëª¨ë‘ ì¶œë ¥. \n");
+		printf("¸ğµÎ Ãâ·Â. \n");
 	}
 	else
-		printf("í•´ë‹¹ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤. \n");
+		printf("ÇØ´ç µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù. \n");
 }
 

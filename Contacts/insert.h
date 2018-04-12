@@ -1,22 +1,23 @@
 
-// ì‚½ìž…
+// »ðÀÔ
 void insert(User* ptr, int* num)
-{Â 
-    //ìœ ì €ì •ë³´ê°€ ê½‰ ì°¨ì§€ ì•Šìœ¼ë©´Â 
-    if (*num < MAX)Â 
-    {Â Â 
-        printf("ì¶”ê°€í•  ì´ë¦„: ");
-        scanf("%s", ptr[*num].name);
-        printf("ì¶”ê°€í•  ì „í™”ë²ˆí˜¸: ");
-        scanf("%s", ptr[*num].number);
-        printf("ì¶”ê°€í•  ì£¼ì†Œ: ");
-        scanf("%s", ptr[*num].add);
-        printf("ì¶”ê°€í•  ìƒì¼: ");
-        scanf("%s", ptr[*num].bir);Â 
-        (*num)++;
-        printf("------ ì¶”ê°€ ì™„ë£Œ ------ \n");
-    }
- Â   // ê³µê°„XÂ 
-    else
-        printf("FULL \n");
+{
+	//À¯ÀúÁ¤º¸°¡ ²Ë Â÷Áö ¾ÊÀ¸¸é
+	if (*num < MAX)
+	{
+		printf("Ãß°¡ÇÒ ÀÌ¸§: ");
+		scanf("%s", ptr[*num].name);
+		printf("Ãß°¡ÇÒ ÀüÈ­¹øÈ£: ");
+		scanf("%s", ptr[*num].number);
+		printf("Ãß°¡ÇÒ ÁÖ¼Ò: ");
+		scanf("%s", ptr[*num].add);
+		printf("Ãß°¡ÇÒ »ýÀÏ: ");
+		scanf("%s", ptr[*num].bir);
+		(*num)++;
+		printf("------ Ãß°¡ ¿Ï·á ------ \n");
+	}
+
+	// °ø°£X
+	else
+		printf("FULL \n");
 }
