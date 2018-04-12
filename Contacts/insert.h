@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 // »ðÀÔ
 void insert(User* ptr, int* num)
@@ -21,3 +22,6 @@ void insert(User* ptr, int* num)
 	else
 		printf("FULL \n");
 }
+=======
+//
+>>>>>>> c511de327f2d5b4d04d0acdd1a4ff7d6af713ced

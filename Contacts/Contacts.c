@@ -2,7 +2,7 @@
 // ±âº» ÀÔÃâ·Â Çì´õ ÆÄÀÏ
 #include <stdio.h>
 
-#include <insert.h>
+//#include <insert.h>
 
 // ¸Ş¸ğ¸® ±âº» ÇÔ¼ö Çì´õ ÆÄÀÏ
 #include <string.h>
@@ -67,7 +67,34 @@ int main(void)
 }
 
 
+<<<<<<< HEAD
 // »èÁ¦
+=======
+// ì‚½ì…
+void insert(User* ptr, int* num)
+{Â 
+    //ìœ ì €ì •ë³´ê°€ ê½‰ ì°¨ì§€ ì•Šìœ¼ë©´Â 
+    if (*num < MAX)Â 
+    {Â Â 
+        printf("ì¶”ê°€í•  ì´ë¦„: ");
+        scanf("%s", ptr[*num].name);
+        printf("ì¶”ê°€í•  ì „í™”ë²ˆí˜¸: ");
+        scanf("%s", ptr[*num].number);
+        printf("ì¶”ê°€í•  ì£¼ì†Œ: ");
+        scanf("%s", ptr[*num].add);
+        printf("ì¶”ê°€í•  ìƒì¼: ");
+        scanf("%s", ptr[*num].bir);Â 
+        (*num)++;
+        printf("------ ì¶”ê°€ ì™„ë£Œ ------ \n");
+    }
+ Â   // ê³µê°„XÂ 
+    else
+        printf("FULL \n");
+}
+
+
+// ì‚­ì œ
+>>>>>>> c511de327f2d5b4d04d0acdd1a4ff7d6af713ced
 int deleted(User* ptr, int* num)
 {
 	char name[30];
