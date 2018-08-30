@@ -70,22 +70,22 @@ int main(void)
 <<<<<<< HEAD
 // ����
 =======
-// 삽입
+// ?�입
 void insert(User* ptr, int* num)
 { 
-    //유저정보가 꽉 차지 않으면 
+    //?��??�보가 �?차�? ?�으면�?
     if (*num < MAX) 
     {  
-        printf("추가할 이름: ");
+        printf("추�????�름: ");
         scanf("%s", ptr[*num].name);
-        printf("추가할 전화번호: ");
+        printf("추�????�화번호: ");
         scanf("%s", ptr[*num].number);
-        printf("추가할 주소: ");
+        printf("추�???주소: ");
         scanf("%s", ptr[*num].add);
-        printf("추가할 생일: ");
+        printf("추�????�일: ");
         scanf("%s", ptr[*num].bir); 
         (*num)++;
-        printf("------ 추가 완료 ------ \n");
+        printf("------ 추�? ?�료 ------ \n");
     }
     // 공간X 
     else
@@ -93,7 +93,7 @@ void insert(User* ptr, int* num)
 }
 
 
-// 삭제
+// ??��
 >>>>>>> c511de327f2d5b4d04d0acdd1a4ff7d6af713ced
 int deleted(User* ptr, int* num)
 {
